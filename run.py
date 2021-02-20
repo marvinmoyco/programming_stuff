@@ -7,8 +7,8 @@ from linear_data_structures import *
 if __name__ == "__main__":
     check = True
     while check:
-        mode_input = int(input("Choose a data structure: (1) Stack, \n(2) Queue, \n(3) Dequeue: "))
-        if mode_input >=1 and mode_input <= 3:
+        mode_input = int(input("Choose a data structure: (1) Stack, \n(2) Queue, \n(3) Dequeue, \n(4) Hash Table, \nBinary Trees: "))
+        if mode_input >=1 and mode_input <= 5:
             check = False
         else:
             check = True
@@ -79,3 +79,26 @@ if __name__ == "__main__":
             dq.pop_back()
 
         print(dq.check_contents())
+    elif mode_input == 4: #Hash Table
+        print("Mode: Hash Table")
+        ht = {}
+        check_ht = True
+        print("Adding elements on the hash table....")
+        while check_ht:
+            key = input("Enter a key...")
+            value = input("Enter the value...")
+            ht[key] = value
+            l = input("Continue? (Y)/(N)....").lower()
+            if l == 'y':
+                check_ht = True
+            elif l == 'n':
+                check_ht = False
+        print("The contents of the hash table are: {}".format(ht))
+        print("Removing 1 element from the hash table...")
+        key_rm = input("Enter the key of the element to remove....")
+        del ht[key_rm]
+        print("The contents of the hash table are: {}".format(ht))
+
+    elif mode_input == 5: #Binary Tree
+        print("Mode: Hash Table")
+
