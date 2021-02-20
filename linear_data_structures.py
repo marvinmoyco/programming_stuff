@@ -74,33 +74,40 @@ class dequeue:
     def check_contents(self):
         print("The data inside the dequeue are:\n {}".format(self.data))
 
-    class BT_node:
-        """
-        Binary tree is a hiererchal data structure that uses nodes that connects to other nodes.
-        Reference: https://www.tutorialspoint.com/python_data_structure/python_binary_tree.htm
-        """
-        def __init__(self,data=0):
-            self.data = data
-            self.left_node = None
-            self.right_node = None
+class BT_Node:
+    """
+    Binary tree is a hiererchal data structure that uses nodes that connects to other nodes.
+    Reference: https://www.tutorialspoint.com/python_data_structure/python_binary_tree.htm
+    """
+    def __init__(self,data=0):
+        self.data = data
+        self.left_node = None
+        self.right_node = None
 
-        def insert(self,data):
-            """ When inserting data in a binary tree, if the data to be inserted is less than the parent node, then it will be inserted on the left side.
-                If it is greater than the parent node, then the data will be inserted on the right side."""
+    def insert(self,data):
+        """ When inserting data in a binary tree, if the data to be inserted is less than the parent node, then it will be inserted on the left side.
+            If it is greater than the parent node, then the data will be inserted on the right side."""
 
-            if self.data: #If data of parent node is not empty
-                if self.data > data:
-                    if self.left_node is None:
-                        self.left_node = BT_node(data)
-                    else:
-                        self.left_node.insert(data)
-                elif self.data < data:
-                    if self.right_node is None:
-                        self.right_node = BT_node(data)
-                    else:
-                        self.right_node.insert(data)
+        if self.data: #If data of parent node is not empty
+            if self.data > data:
+                if self.left_node is None:
+                    self.left_node = BT_Node(data)
+                else:
+                    self.left_node.insert(data)
+            elif self.data < data:
+                if self.right_node is None:
+                    self.right_node = BT_Node(data)
+                else:
+                    self.right_node.insert(data)
                     
 
-            else: # If it is empty
-                self.data = data
+        else: # If it is empty
+            self.data = data
+
+    def print_tree(self):
+        if self.left_node:
+            self.left_node.print_tree()
+        print(self.data)
+        if self.right_node:
+            self.right_node.print_tree()
 

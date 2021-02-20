@@ -7,7 +7,7 @@ from linear_data_structures import *
 if __name__ == "__main__":
     check = True
     while check:
-        mode_input = int(input("Choose a data structure: (1) Stack, \n(2) Queue, \n(3) Dequeue, \n(4) Hash Table, \nBinary Trees: "))
+        mode_input = int(input("Choose a data structure: (1) Stack, \n(2) Queue, \n(3) Dequeue, \n(4) Hash Table, \n(5) Binary Trees: "))
         if mode_input >=1 and mode_input <= 5:
             check = False
         else:
@@ -100,5 +100,17 @@ if __name__ == "__main__":
         print("The contents of the hash table are: {}".format(ht))
 
     elif mode_input == 5: #Binary Tree
-        print("Mode: Hash Table")
+        print("Mode: Binary Tree")
+        x = int(input("Enter a number: "))
+        bt_root = BT_Node(x)
+        print("Printing Tree...")
+        bt_root.print_tree()
+        x = int(input("Enter a number: "))
+        bt_root.insert(x)
+        print("Printing Tree...")
+        bt_root.print_tree()
+        x = int(input("Enter a number: "))
+        bt_root.insert(x)
+        print("Printing Tree...")
+        bt_root.print_tree()
 
